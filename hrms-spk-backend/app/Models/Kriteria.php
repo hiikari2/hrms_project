@@ -43,4 +43,9 @@ class Kriteria extends Model
     {
         return $this->hasMany(EmployeeEvaluation::class);
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
 }
